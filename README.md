@@ -1,4 +1,4 @@
 docker-ghost
 ============
 
-A Docker images for the Ghost blogging software
+A Docker image for the Ghost blogging software

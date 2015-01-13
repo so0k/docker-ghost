@@ -1,4 +1,4 @@
-FROM node:0.10.33
+FROM node:0.10.35
 
 # Set environment variables
 ENV NODE_ENV production
