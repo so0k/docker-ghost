@@ -2,7 +2,7 @@ FROM node:0.10.31
 
 # Set environment variables
 ENV NODE_ENV production
-ENV GHOST_VERSION=0.5.8
+ENV GHOST_VERSION 0.5.8
 
 # Set up application
 #ADD . /usr/src/app
@@ -26,8 +26,8 @@ RUN \
     npm install --production && \
     sed 's/127.0.0.1/0.0.0.0/' /ghost/config.example.js > /ghost/config.js 
 
-ENV $USER_UID=500
-ENV $USER_GID=500
+ENV USER_UID 500
+ENV USER_GID 500
 
 #add ghost user
 RUN \
