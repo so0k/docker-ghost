@@ -1,22 +1,50 @@
-FROM node:0.10.35
+FROM node:0.10.31
 
 # Set environment variables
 ENV NODE_ENV production
+ENV GHOST_VERSION=0.5.8
 
 # Set up application
-ADD . /usr/src/app
-WORKDIR /usr/src/app
-
+#ADD . /usr/src/app
+#WORKDIR /usr/src/app
 # Install dependencies
-RUN npm install
+#RUN npm install
 
-# Set up application-specific files
-RUN mkdir /data
-RUN ln -s /data/config.js /usr/src/app/config.js
-RUN ln -s /data/content /usr/src/app/content
+#install wget
+RUN \
+    apt-get update && \
+    apt-get install wget -y && \
+    apt-get autoremove -y
 
-# Expose port
+# Download & Install specified ghost release
+RUN \
+    cd /tmp && \
+    wget https://github.com/TryGhost/Ghost/releases/download/$GHOST_VERSION/Ghost-$GHOST_VERSION.zip && \
+    unzip ghost-$GHOST_VERSION.zip -d /ghost && \
+    rm -f ghost-$GHOST_VERSION.zip && \
+    cd /ghost && \
+    npm install --production && \
+    sed 's/127.0.0.1/0.0.0.0/' /ghost/config.example.js > /ghost/config.js 
+
+ENV $USER_UID=500
+ENV $USER_GID=500
+
+#add ghost user
+RUN \
+    groupadd --gid $USER_GID ghost && \
+    useradd -d /ghost -m ghost --uid $USER_UID --gid $USER_GID --shell /bin/bash
+
+# Add files.
+ADD start.bash /ghost-start
+
+# Define mountable directories.
+VOLUME ["/data", "/ghost-override"]
+
+# Define working directory.
+WORKDIR /ghost
+
+# Define default command.
+CMD ["bash", "/ghost-start"]
+
+# Expose ports.
 EXPOSE 2368
-
-# Run application
-CMD ["npm", "start"]

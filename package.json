@@ -1,8 +1,0 @@
-{
-    "scripts": {
-        "start": "node index"
-    },
-    "dependencies": {
-        "ghost": "0.5.8"
-    }
-}
