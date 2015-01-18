@@ -20,8 +20,8 @@ RUN \
 RUN \
     cd /tmp && \
     wget https://github.com/TryGhost/Ghost/releases/download/$GHOST_VERSION/Ghost-$GHOST_VERSION.zip && \
-    unzip ghost-$GHOST_VERSION.zip -d /ghost && \
-    rm -f ghost-$GHOST_VERSION.zip && \
+    unzip Ghost-$GHOST_VERSION.zip -d /ghost && \
+    rm -f Ghost-$GHOST_VERSION.zip && \
     cd /ghost && \
     npm install --production && \
     sed 's/127.0.0.1/0.0.0.0/' /ghost/config.example.js > /ghost/config.js 
