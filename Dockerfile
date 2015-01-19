@@ -13,7 +13,7 @@ ENV GHOST_VERSION 0.5.8
 #install wget
 RUN \
     apt-get update && \
-    apt-get install wget -y && \
+    apt-get install wget unzip -y && \
     apt-get autoremove -y
 
 # Download & Install specified ghost release
