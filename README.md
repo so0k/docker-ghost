@@ -11,7 +11,7 @@ docker run -d --name ghost \
     -p 80:2368 
     -e 'USER_UID=500' -e 'USER_GID=500' -e 'GHOST_URL=http://10.40.0.5/' 
     -v /path/to/blog/data/data:/ghost-override 
-    so0k/ghost:0.5.8`
+    so0k/ghost:0.5.8
 ```
 
 my ```/path/to/blog/data/config.js``` like this:
