@@ -61,6 +61,11 @@ if ! has_value USER_GID; then
   error=1
 fi
 
+if [[ $error > 0 ]]; then
+  exit 1
+fi
+
+
 #add ghost user
 groupadd --gid $USER_GID ghost && \
     useradd -d /ghost -m ghost --uid $USER_UID --gid $USER_GID --shell /bin/bash
