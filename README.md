@@ -6,7 +6,7 @@ follow official ghost Docker image, added version for tagged builds
 I'm running this on CoreOS and chown to the core user (userid 500)
 
 my docker run looks like this:
-``` docker run -d -p 80:2368 --name ghost -e 'GHOST_URL=http://myblog.url/' -v /path/to/blog/data:/ghost-override so0k/ghost:0.5.8```
+`docker run -d -p 80:2368 --name ghost -e 'USER_UID=500' -e 'USER_GID=500' -e 'GHOST_URL=http://10.40.0.5/' -v /var/golfconnect/blog/data:/ghost-override so0k/ghost:0.5.8-2`
 
 my ```/path/to/blog/data/config.js``` like this:
 ```
