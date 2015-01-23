@@ -8,6 +8,21 @@ DATA="content/data"
 IMAGES="content/images"
 THEMES="content/themes"
 
+defined () {
+    [[ ${!1-X} == ${!1-Y} ]]
+}
+
+has_value () {
+    if defined $1; then
+        if [[ -n ${!1} ]]; then
+            return 0
+        fi
+    fi
+    return 1
+}
+
+error=0
+
 cd "$GHOST"
 
 # Symlink data directory.
@@ -36,6 +51,20 @@ if [[ -d "$OVERRIDE/$THEMES" ]]; then
 fi
 
 # Start Ghost
+if ! has_value USER_UID; then
+  echo "You must set USER_UID as a docker env var"
+  error=1
+fi
+
+if ! has_value USER_GID; then
+  echo "You must set USER_GID as a docker env var"
+  error=1
+fi
+
+#add ghost user
+groupadd --gid $USER_GID ghost && \
+    useradd -d /ghost -m ghost --uid $USER_UID --gid $USER_GID --shell /bin/bash
+
 chown -R ghost:ghost /data /ghost /ghost-override
 su ghost << EOF
 cd "$GHOST"

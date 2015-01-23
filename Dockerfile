@@ -26,14 +26,6 @@ RUN \
     npm install --production && \
     sed 's/127.0.0.1/0.0.0.0/' /ghost/config.example.js > /ghost/config.js 
 
-ENV USER_UID 500
-ENV USER_GID 500
-
-#add ghost user
-RUN \
-    groupadd --gid $USER_GID ghost && \
-    useradd -d /ghost -m ghost --uid $USER_UID --gid $USER_GID --shell /bin/bash
-
 # Add files.
 ADD start.bash /ghost-start
 
