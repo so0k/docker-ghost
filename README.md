@@ -88,7 +88,7 @@ ghost:
      - USER_GID=500
      - GHOST_URL=http://blog.project.com
     ports:
-     - "11080:2368"
+     - "80:2368"
     volumes:
      - /var/project/blog/data:/ghost-override
     external_links:
