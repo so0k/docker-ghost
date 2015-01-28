@@ -6,8 +6,8 @@ Kindly find below instructions on running this container:
 - [Quickstart](#quickstart)
  - using `docker run`
  - using internal SQLite database
-- [Using `docker-compose`](#using-docker-compose)
- - using 'docker-compose'
+- [Advanced](#using-docker-compose)
+ - using `docker-compose`
  - using shared postgres container
 
 ##Quickstart 
