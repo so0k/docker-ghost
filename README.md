@@ -125,3 +125,9 @@ config = {
 // Export config
 module.exports = config;
 ```
+
+once everything is set up, just the following commands to bring up the shared database service and blog service:
+```bash
+(cd /var/project/compose/shared; docker-compose up -d)
+(cd /var/project/compose/blog; docker-compose up -d)
+```
