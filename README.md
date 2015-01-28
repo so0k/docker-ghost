@@ -1,5 +1,7 @@
 #docker-ghost
-Following official ghost Docker image, added version in Dockerfile for tagged builds
+Amended official ghost Docker image, by adding version in Dockerfile for tagged builds
+
+Kindly find below instructions on running this container:
 
 - [Quickstart using `docker run`](#quickstart)
 - [Setup with `docker-compose`](#using-docker-compose)
