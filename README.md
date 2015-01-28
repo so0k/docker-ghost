@@ -4,7 +4,11 @@ Amended official ghost Docker image, by adding version in Dockerfile for tagged 
 Kindly find below instructions on running this container:
 
 - [Quickstart using `docker run`](#quickstart)
+ - using `docker run`
+ - using internal SQLite database
 - [Setup with `docker-compose`](#using-docker-compose)
+ - using 'docker-compose'
+ - using shared postgres container
 
 ##Quickstart 
 
