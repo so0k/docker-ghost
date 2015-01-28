@@ -55,6 +55,7 @@ config.js References:
 - https://github.com/TryGhost/Ghost/blob/master/config.example.js
 - https://github.com/orchardup/docker-ghost/blob/master/config.js
 - https://github.com/discordianfish/docker-ghost/blob/master/config.js
+- https://github.com/yoshz/docker-ghost/blob/master/config.js
 
 ##Using docker-compose
 Setting up docker-compose yml files to use a shared postgres container
