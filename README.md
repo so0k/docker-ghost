@@ -1,8 +1,8 @@
 #docker-ghost
 Following official ghost Docker image, added version in Dockerfile for tagged builds
 
-- [Quickstart using `docker run`](#Quickstart)
-- [Setup with `docker-compose`](#Using-docker-compose)
+- [Quickstart using `docker run`](#quickstart)
+- [Setup with `docker-compose`](#using-docker-compose)
 
 ##Quickstart 
 
