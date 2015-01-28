@@ -103,7 +103,7 @@ ghost:
 ```
 
 `/var/project/blog/data/config.js`:
-```
+```javascript
 // # Ghost Configuration 0.5.8
 var path = require('path'),
     config;
