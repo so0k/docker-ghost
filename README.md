@@ -1,5 +1,6 @@
 #docker-ghost
 Amended official ghost Docker image, by adding version in Dockerfile for tagged builds
+[on Docker registry](https://registry.hub.docker.com/u/so0k/docker-ghost/)
 
 Kindly find below instructions on running this container:
 
