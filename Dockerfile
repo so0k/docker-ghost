@@ -2,7 +2,7 @@ FROM node:0.10.31
 
 # Set environment variables
 ENV NODE_ENV production
-ENV GHOST_VERSION 0.5.8
+ENV GHOST_VERSION 0.7.1
 
 # Set up application
 #ADD . /usr/src/app
